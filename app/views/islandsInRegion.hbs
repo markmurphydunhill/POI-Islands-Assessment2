@@ -1,0 +1,52 @@
+{{> welcomemenu }}
+<section class="ui raised segment">
+    <div class="ui grid">
+        <section class="ui stacked segment">
+            <h2 class="ui header">
+                {{regionName}}
+
+            </h2>
+
+        </section>
+
+        {{#each islandsInRegion}}
+            <section class="ui stacked segment">
+                <h2 class="ui header">
+
+                    {{name}}
+                </h2>
+                <table class="ui celled table segment">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Costal Zone</th>
+                        <th>Longtitude</th>
+                        <th>Latitude</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr>
+                        <td> {{name}} </td>
+                        <td> {{description}} </td>
+                        <td> {{costalZone}} </td>
+                        <td>{{long}}</td>
+                        <td>{{lat}}</td>
+
+
+                    </tr>
+                    </tbody>
+                </table>
+
+
+                </a>
+            </section>
+        {{/each}}
+
+
+
+
+
+    </div>
+</section>
