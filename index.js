@@ -2,8 +2,18 @@
 
 const Hapi = require('hapi');
 
-const server = Hapi.server({
+/*const server = Hapi.server({
     port: process.env.PORT || 3000,
+});*/
+
+const fs = require('fs');
+const server = Hapi.server({
+    port: 3443,
+    tls: {
+        key: fs.readFileSync('private/myca.key'),
+        cert: fs.readFileSync('private/myca.crt')
+    },
+    routes: {cors:true}
 });
 
 require('dotenv').config();

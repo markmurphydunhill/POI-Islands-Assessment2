@@ -7,7 +7,7 @@ const regionSchema = new Schema({
     title: String,
     geo: {
         lat: Number,
-        Long: Number
+        long: Number
     }
 
 

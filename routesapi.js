@@ -1,24 +1,29 @@
 const Islands = require('./app/api/islands');
-//const Users= require('./app/api/users');
+const Users= require('./app/api/users');
+const Regions= require('./app/api/regions');
 
 
 
 module.exports = [
     { method: 'GET', path: '/api/islands', config: Islands.find },
     { method: 'GET', path: '/api/islands/{id}', config: Islands.findOne },
-    { method: 'GET', path: '/api/islandsinregion/{id}', config: Islands.islandsInRegion}
+    { method: 'GET', path: '/api/islandsinregion/{id}', config: Islands.islandsInRegion},
+    { method: 'GET', path: '/api/islandsbyuser/{id}', config: Islands.islandsByUser},
+    { method: 'POST', path: '/api/createisland', config: Islands.createIsland },
    // { method: 'POST', path: '/api/candidates', config: Candidates.create },
-   // { method: 'DELETE', path: '/api/candidates/{id}', config: Candidates.deleteOne },
-    //{ method: 'DELETE', path: '/api/candidates', config: Candidates.deleteAll },
+    { method: 'DELETE', path: '/api/deleteisland/{id}', config: Islands.deleteOne },
+    { method: 'GET', path: '/api/deleteallislands', config: Islands.deleteAll },
 
-    //{ method: 'GET', path: '/api/users', config: Users.find },
-    //{ method: 'GET', path: '/api/users/{id}', config: Users.findOne },
+    { method: 'GET', path: '/api/users', config: Users.find },
+    { method: 'GET', path: '/api/users/{id}', config: Users.findOne },
+    { method: 'POST', path: '/api/createuser', config: Users.createUser },
     // { method: 'POST', path: '/api/users', config: Users.create },
-    //{ method: 'DELETE', path: '/api/users/{id}', config: Users.deleteOne },
-    //{ method: 'DELETE', path: '/api/users', config: Users.deleteAll },
+    { method: 'DELETE', path: '/api/deleteuser/{id}', config: Users.deleteOne },
+    { method: 'DELETE', path: '/api/deleteusers', config: Users.deleteAll },
 
-    //{ method: 'GET', path: '/api/donations', config: Donations.findAll },
-    //{ method: 'GET', path: '/api/candidates/{id}/donations', config: Donations.findByCandidate },
-    //{ method: 'POST', path: '/api/candidates/{id}/donations', config: Donations.makeDonation },
-    //{ method: 'DELETE', path: '/api/donations', config: Donations.deleteAll }
+    { method: 'GET', path: '/api/regions', config: Regions.findAll },
+    { method: 'GET', path: '/api/regions/{id}', config: Regions.findOne },
+    { method: 'POST', path: '/api/createregion', config: Regions.createRegion },
+    { method: 'GET', path: '/api/deleteregion/{id}', config: Regions.deleteOne },
+    { method: 'GET', path: '/api/deleteregions', config: Regions.deleteAll }
 ];

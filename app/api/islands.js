@@ -46,22 +46,38 @@ const Islands = {
         }
     },
 
-    create: {
+    islandsByUser: {
         auth: false,
         handler: async function(request, h) {
-            const newCandidate = new Candidate(request.payload);
-            const candidate = await newCandidate.save();
-            if (candidate) {
-                return h.response(candidate).code(201);
+            try {
+                const islands = await Island.find({ creator: request.params.id });
+                if (!islands) {
+                    return Boom.notFound('No User with this id');
+                }
+                return islands;
+            } catch (err) {
+                return Boom.notFound('No User with this id');
             }
-            return Boom.badImplementation('error creating candidate');
+        }
+    },
+
+    createIsland: {
+        auth: false,
+        handler: async function(request, h) {
+            const newIsland = new Island(request.payload);
+            const island = await newIsland.save();
+            console.log("island created");
+            if (island) {
+                return h.response(island).code(201);
+            }
+            return Boom.badImplementation('error creating island');
         }
     },
 
     deleteAll: {
         auth: false,
         handler: async function(request, h) {
-            await Candidate.deleteMany({});
+            await Island.deleteMany({});
             return { success: true };
         }
     },
@@ -69,11 +85,11 @@ const Islands = {
     deleteOne: {
         auth: false,
         handler: async function(request, h) {
-            const response = await Candidate.deleteOne({ _id: request.params.id });
+            const response = await Island.deleteOne({ _id: request.params.id });
             if (response.deletedCount == 1) {
                 return { success: true };
             }
-            return Boom.notFound('id not found');
+            return Boom.notFound('Island not found');
         }
     }
 };

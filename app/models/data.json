@@ -5,20 +5,21 @@
       "firstName": "Homer",
       "lastName": "Simpson",
       "email": "homer@simpson.com",
-      "password": "secret"
+      "password": "$2b$10$NYy21Hn39p.b1ca/4r7FVOjw3MvY3Nvh2ASaUCwfTe5dOf8rBSOTi"
     },
     "marge": {
       "firstName": "Marge",
       "lastName": "Simpson",
       "email": "marge@simpson.com",
-      "password": "secret"
+      "password": "$$2b$10$stTD7p4PR04OWWy/qBLtFOw3F3/tIxam.Zeb.tC2SHoqaG6meKJWW"
     },
     "bart": {
       "firstName": "Bart",
       "lastName": "Simpson",
       "email": "bart@simpson.com",
-      "password": "secret"
+      "password": "$2b$10$iNHUWcMnwtwD8B2NqnL0c.bd0Lg1lIma2aWyw6AbF7gZNrNQWzGS2"
     }
+
   },
 
 
@@ -166,14 +167,14 @@
     },
 
     "Keeragh Islands":{
-    "name": "Keeragh Islands",
-    "lat": 52.19857617,
-    "long": -6.73417805,
-    "description": "These two islets lie in Ballyteige Bay, 12<em>km</em> W of the Saltees, relatively close inshore. They are small low-lying Birdwatch Ireland bird reserves. There are two distinct islands, but they are always regarded as the one. Landing is awkwardly practical at the N tip of each island, on either side of a projecting spit. On the bigger, northern island, there is an easy beachlet in a cut at the SW, facing the smaller island. Approach from the beach at Cullenstown at S869-077, 2<em>km</em> to the NNE. Stay away in spring and early summer, as nests are too numerous to avoid. The ruin on the larger island was built in 1800 for survivors of shipwrecks, but is now dilapidated. There is still a sealed box inside with what looks like electricity going into it, suggesting a phone? SPA Arctic Tern",
-    "costalZone": "The South Coast",
-    "region": "->regions.South Coast",
-    "creator":"->users.homer"
-  },
+      "name": "Keeragh Islands",
+      "lat": 52.19857617,
+      "long": -6.73417805,
+      "description": "These two islets lie in Ballyteige Bay, 12<em>km</em> W of the Saltees, relatively close inshore. They are small low-lying Birdwatch Ireland bird reserves. There are two distinct islands, but they are always regarded as the one. Landing is awkwardly practical at the N tip of each island, on either side of a projecting spit. On the bigger, northern island, there is an easy beachlet in a cut at the SW, facing the smaller island. Approach from the beach at Cullenstown at S869-077, 2<em>km</em> to the NNE. Stay away in spring and early summer, as nests are too numerous to avoid. The ruin on the larger island was built in 1800 for survivors of shipwrecks, but is now dilapidated. There is still a sealed box inside with what looks like electricity going into it, suggesting a phone? SPA Arctic Tern",
+      "costalZone": "The South Coast",
+      "region": "->regions.South Coast",
+      "creator":"->users.homer"
+    },
     "Hook Pennisula":{
       "name": "Hook Penninsula",
       "lat": 52.12322973,

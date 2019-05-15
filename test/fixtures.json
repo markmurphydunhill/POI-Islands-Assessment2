@@ -1,0 +1,76 @@
+{
+  "islandService": "http://localhost:3000",
+  "users": [
+    {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+      "password": "secret"
+    },
+    {
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret"
+    },
+    {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret"
+    }
+  ],
+
+  "newIsland": {
+    "name": "Blackthorn Islands",
+    "lat": 52.67831233,
+    "long": -9.00166725,
+    "description": "Very attractive very low lying small triangular islet being a single field of about 3ha.  The most significant feature is the 19c dyke built of limestone blocks with no cement all round, to stave off the flooding.  The cost benefit analysis at the time must have been interesting.  Because it is in the path, almost, of the main flow, the shingle beaches on the N side are relatively mud free.",
+    "costalZone": "The Mid-West"
+  },
+
+  "islands": [
+    {
+
+      "name": "Portrush",
+      "lat": 55.20595449,
+      "long": -6.65623781,
+      "description": "Portrush West Bay is easily accessed under the railway line. The slipway in the harbour is awkward in swell, being quite close to the entrance and is quite busy. Consider using Portandoo Harbour at C857-412 instead, though the parking is a little more remote. There is also good parking at the W end of Curran Strand with parking at C863-406. Ramore Head is interesting exploring in calm conditions. Skerries Sound often kicks up and is best avoided by the inexperienced. The ebb sets up powerful standing waves. ",
+      "costalZone": "The North East"
+
+    },
+
+    {  "name": "Portrush to Portballintrae",
+      "lat": 55.20595449,
+      "long": -6.65623781,
+      "description": "White Rocks Beach at C899-411 is accessible from the road and there are good toilet and day time parking facilities. Calm conditions are necessary as the surf can be quite powerful with large dumping waves in heavy seas. The rips are strong and the tide flows strongly just beyond the break line. The rips are easily read from above on the road. It is mainly cliffs eastwards to Portballintrae. There are a number of interesting caves in the first section along under prominent Dunluce Castle at C905-415. One such cave is directly under the castle. Exploration of some of the other caves hereabouts requires a torch. There is good rock hopping eastwards to Portballintrae, with at least one good sheltered deep water landing in a channel about the halfway mark. Another cave just W of Binbane Cove is 40 to 50<em>m</em> long. Beware of a choke point halfway in, where the surge can catch the unwary. In Portballintrae Harbour, there is a public slipway at C926-423. There are toilets and a car park which can become quite congested in summer. Local surfers prefer the larger car park at C930-424 overlooking Bushfoot Strand to the E of the town. Access to the beach is just W of the car park. Kayakers always prefer the harbour.",
+      "costalZone": "The North East"
+    },
+    {
+      "name": "Downhill",
+      "lat": 55.16721802,
+      "long": -6.81917323,
+      "description": "There is public access at the extreme E end of Benone Beach at a point called Downhill Strand. The Downhill Hotel was closed and demolished.  An apartment block now fills the gap.  Parking and toilets are beside the apartments and access is by a stream through an archway under the railway.",
+      "costalZone": "The North East"
+    },
+    {
+      "name": "Portstewart to Portrush",
+      "lat": 55.18778894,
+      "long": -6.72122191,
+      "description": "The coastline here is basalt and reasonably interesting, low lying at first. Rinagree Point at C833-397 is the halfway point. To its W is Black Rock and just off it lies Lawson’s Rock, which breaks even in a moderate swell. It is possible to shelter in the lee of Black Rock. There is a tiny storm beach accessible from landward just E of Rinagree Point. Boomers may be expected hereabouts. Rock hopping and narrow channels are best enjoyed in calmer conditions and at about HW. Tides An eddy runs west on the flood tide between Ramore Head to the Bann Barmouth from 2 hours before Belfast HW. ",
+      "costalZone": "The North East"
+    }
+  ],
+  "newUser": {
+    "firstName": "Maggie",
+    "lastName": "Simpson",
+    "email": "maggie@simpson.com",
+    "password": "secret"
+  }
+}
+
+
+
+
+
+
