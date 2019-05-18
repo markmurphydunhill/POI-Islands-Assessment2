@@ -9,6 +9,8 @@ const Islands = {
 
     find: {
         auth: false,
+
+
         handler: async function(request, h) {
             const islands = await Island.find();
             console.log(islands)
@@ -17,7 +19,10 @@ const Islands = {
     },
 
     findOne: {
-        auth: false,
+       //auth: false,
+        auth: {
+            strategy: 'jwt',
+        },
         handler: async function(request, h) {
             try {
                 const island = await Island.findOne({ _id: request.params.id });
@@ -32,7 +37,10 @@ const Islands = {
     },
 
     islandsInRegion: {
-        auth: false,
+        //auth: false,
+        auth: {
+            strategy: 'jwt',
+        },
         handler: async function(request, h) {
             try {
                 const islands = await Island.find({ region: request.params.id });
@@ -47,7 +55,10 @@ const Islands = {
     },
 
     islandsByUser: {
-        auth: false,
+        //auth: false,
+        auth: {
+            strategy: 'jwt',
+        },
         handler: async function(request, h) {
             try {
                 const islands = await Island.find({ creator: request.params.id });
@@ -62,7 +73,11 @@ const Islands = {
     },
 
     createIsland: {
-        auth: false,
+
+       //auth: false,
+        auth: {
+            strategy: 'jwt',
+        },
         handler: async function(request, h) {
             const newIsland = new Island(request.payload);
             const island = await newIsland.save();
@@ -75,7 +90,10 @@ const Islands = {
     },
 
     deleteAll: {
-        auth: false,
+       // auth: false,
+        auth: {
+            strategy: 'jwt',
+        },
         handler: async function(request, h) {
             await Island.deleteMany({});
             return { success: true };
@@ -83,8 +101,11 @@ const Islands = {
     },
 
     deleteOne: {
-        auth: false,
-        handler: async function(request, h) {
+        //auth: false,
+        auth: {
+            strategy: 'jwt',
+        },
+       handler: async function(request, h) {
             const response = await Island.deleteOne({ _id: request.params.id });
             if (response.deletedCount == 1) {
                 return { success: true };

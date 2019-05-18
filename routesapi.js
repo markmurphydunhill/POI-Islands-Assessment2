@@ -10,7 +10,6 @@ module.exports = [
     { method: 'GET', path: '/api/islandsinregion/{id}', config: Islands.islandsInRegion},
     { method: 'GET', path: '/api/islandsbyuser/{id}', config: Islands.islandsByUser},
     { method: 'POST', path: '/api/createisland', config: Islands.createIsland },
-   // { method: 'POST', path: '/api/candidates', config: Candidates.create },
     { method: 'DELETE', path: '/api/deleteisland/{id}', config: Islands.deleteOne },
     { method: 'GET', path: '/api/deleteallislands', config: Islands.deleteAll },
 
@@ -20,6 +19,7 @@ module.exports = [
     // { method: 'POST', path: '/api/users', config: Users.create },
     { method: 'DELETE', path: '/api/deleteuser/{id}', config: Users.deleteOne },
     { method: 'DELETE', path: '/api/deleteusers', config: Users.deleteAll },
+    { method: 'POST', path: '/api/users/authenticate', config: Users.authenticate },
 
     { method: 'GET', path: '/api/regions', config: Regions.findAll },
     { method: 'GET', path: '/api/regions/{id}', config: Regions.findOne },

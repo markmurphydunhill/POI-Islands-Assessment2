@@ -12,6 +12,8 @@ suite('User API tests', function () {
 
     const islandService = new IslandService(fixtures.islandService);
 
+
+
     setup(async function () {
         await islandService.deleteAllUsers();
     });
@@ -20,8 +22,22 @@ suite('User API tests', function () {
         await islandService.deleteAllUsers();
     });
 
+    /*
+    suiteSetup(async function() {
+        await islandService.deleteAllUsers();
+        const returnedUser = await islandService.createUser(newUser);
+        const response = await islandService.authenticate(newUser);
+    });
+
+    suiteTeardown(async function() {
+        await islandService.deleteAllUsers();
+        islandService.clearAuth();
+    });*/
+
     test('create a user', async function () {
         const returnedUser = await islandService.createUser(newUser);
+        console.log(newUser);
+        console.log(returnedUser);
         assert(_.some([returnedUser], newUser), 'returnedUser must be a superset of newUser');
         assert.isDefined(returnedUser._id);
     });

@@ -1,7 +1,7 @@
 'use strict';
 
 const axios = require('axios');
-const baseUrl='http://localhost:3000';
+const baseUrl = 'http://localhost:3000';
 
 
 class IslandsService {
@@ -48,6 +48,43 @@ class IslandsService {
         }
     }
 
+    async getRegions() {
+        try {
+            const response = await axios.get(this.baseUrl + '/api/regions' );
+            return response.data;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    async getRegions(id) {
+        try {
+            const response = await axios.get(this.baseUrl + '/api/regions/' + id);
+            return response.data;
+        } catch (e) {
+            return null;
+        }
+    }
+
+
+    async createRegion(newRegion) {
+
+        try {
+            const response = await axios.post(this.baseUrl + '/api/createregion', newRegion);
+            return response.data;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    async deleteOneRegion(id) {
+        try {
+            const response = await axios.delete(this.baseUrl + '/api/deleteregion/' + id);
+            return response.data;
+        } catch (e) {
+            return null;
+        }
+    }
 
 
 
@@ -71,6 +108,7 @@ class IslandsService {
     }
 
     async createUser(newUser) {
+
         try {
             const response = await axios.post(this.baseUrl + '/api/createuser', newUser);
             return response.data;
@@ -79,6 +117,8 @@ class IslandsService {
         }
     }
 
+
+
     async deleteAllUsers() {
         try {
             const response = await axios.delete(this.baseUrl + '/api/deleteusers');
@@ -86,6 +126,29 @@ class IslandsService {
         } catch (e) {
             return null;
         }
+    }
+
+    async deleteAllRegions() {
+        try {
+            const response = await axios.delete(this.baseUrl + '/api/deleteregions');
+            return response.data;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    async authenticate(user) {
+        try {
+            const response = await axios.post(this.baseUrl + '/api/users/authenticate', user);
+            axios.defaults.headers.common['Authorization'] = 'Bearer ' + response.data.token;
+            return response.data;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    async clearAuth(user) {
+        axios.defaults.headers.common['Authorization'] = '';
     }
 
     async deleteOneUser(id) {

@@ -1,56 +1,47 @@
+/*  ---Added Regions tests to islandtestapi as getting "suite is not defined" error --- */
+
+
 /*'use strict';
 
 const assert = require('chai').assert;
-const axios = require('axios');
+const IslandService = require('./islands-service');
+const fixtures = require('./fixtures.json');
+const _ = require('lodash');
 
-suite('Region API tests', function () {
+suite('User API tests', function () {
 
-    test('get Regions', async function () {
-        const response = await axios.get('http://localhost:3000/api/regions');
-        const regions = response.data;
-        assert.equal(5, regions.length);
+    let regions = fixtures.regions;
+    let newRegion = fixtures.newRegion;
 
-        assert.equal(regions[0].title, 'North East');
-        assert.equal(regions[0].geo.lat, '54.7');
-        assert.equal(regions[0].geo.long, '-6.1412');
+    const islandService = new IslandService(fixtures.islandService);
 
-        assert.equal(regions[4].title, 'Mid West');
-        assert.equal(regions[4].geo.lat, '53.574');
-        assert.equal(regions[4].geo.long, '-9.382');
 
+
+    setup(async function () {
+        await islandService.deleteAllRegions();
     });
 
-    test('get one user', async function () {
-        let response = await axios.get('http://localhost:3000/api/regions');
-        const regions = response.data;
-        assert.equal(5, regions.length);
-
-        const oneRegionUrl = 'http://localhost:3000/api/regions/' + regions[0]._id;
-        response = await axios.get(oneRegionUrl);
-        const oneRegion = response.data;
-
-        assert.equal(oneRegion.title, 'North East');
-        assert.equal(oneRegion.geo.lat, '54.7');
-        assert.equal(oneRegion.geo.long, '-6.1412');
+    teardown(async function () {
+        await islandService.deleteAllRegions();
     });
 
     test('create a region', async function () {
-        const regionUrl = 'http://localhost:3000/api/createregion';
-        const newRegion = {
-            title: 'The South East',
-             geo: {
-                lat: "54.7",
-                long: "-6.1412"
-             }
-        };
-
-        const response = await axios.post(regionUrl, newRegion);
-        const returnedRegion = response.data;
-        assert.equal(201, response.status);
-
-        assert.equal(returnedRegion.title, 'The South East');
-        assert.equal(returnedRegion.geo.lat, '54.7');
-        assert.equal(returnedRegion.geo.long, '-6.1412');
+        const returnedRegion = await islandService.createRegion(newRegion);
+        console.log(newRegion);
+        console.log(returnedRegion);
+        assert(_.some([returnedRegion], newRegion), 'returnedUser must be a superset of newUser');
+        assert.isDefined(returnedRegion._id);
     });
-});
 
+
+
+    test('get region', async function () {
+        const u1 = await islandService.createRegion(newRegion);
+        const u2 = await islandService.getRegion(u1._id);
+        assert.deepEqual(u1, u2);
+    });
+
+
+
+
+});*/
